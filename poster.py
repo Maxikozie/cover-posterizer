@@ -1,8 +1,8 @@
 import math, shutil, sys, re
-from pathlib import Path
-
-from PIL import Image
 import rarfile, zipfile, io
+
+from pathlib import Path
+from PIL import Image
 
 POSSIBLE_UNRAR = [
     r"C:\Program Files\WinRAR\unrar.exe",
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     else:
         print("Extraction produced zero covers; poster not created.")
 
-    # ── tidy up ─────────────────────────────────────────────────────────────────
+    # tidy up
     shutil.rmtree(scratch, ignore_errors=True)
 
     if poster_path.exists():
@@ -156,4 +156,4 @@ if __name__ == "__main__":
         shutil.move(poster_path, final_path)
         print(f" 📂  Moved → {final_path}")
 
-    print("🏁  Done.")
+    print(">  Done.")
