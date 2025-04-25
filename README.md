@@ -5,7 +5,7 @@ I use it to make posters to accompany an upload on MyAnonamouse.
 
 Turn a folder of `.cbr` comic book archives into a single, neatly-tiled poster of their cover art. Great for archiving and uploading on MAM.
 
----![Example Output](https://github.com/user-attachments/assets/8833e691-942c-4433-ae16-68bb027fe7e5)
+![Example Output](https://github.com/user-attachments/assets/8833e691-942c-4433-ae16-68bb027fe7e5)
 
 
 ##  Features & Workflow
