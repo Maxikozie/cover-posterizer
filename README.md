@@ -10,7 +10,7 @@ Turn a folder of `.cbr` comic book archives into a single, neatly-tiled poster o
 
 ##  Features & Workflow
 
-- Scans a folder for `.cbr` files (supports `.cbz` mislabeled as `.cbr`)
+- Scans a folder for `.cbr` and `.cbz` files (case-insensitive)
 - Extracts the **first image** (usually the cover) from each archive
 - Resizes all covers to a uniform height (default: 600px)
 - Tiles them into a single poster, auto-adjusting columns and rows
