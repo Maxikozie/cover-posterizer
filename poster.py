@@ -36,12 +36,16 @@ def _save_image(raw: bytes, member: str, out: Path):
 
 
 def extract_covers(src: Path, out: Path, unrar: str) -> list[Path]:
-    """Grab first JPG/PNG/WebP from each .cbr (or mis-labelled .cbz)."""
+    """Grab first JPG/PNG/WebP from each .cbr/.cbz archive."""
     rarfile.UNRAR_TOOL = unrar
     out.mkdir(exist_ok=True)
     got: list[Path] = []
 
-    for arc in sorted(src.glob("*.cbr")):
+    archives = sorted(
+        p for p in src.iterdir() if p.suffix.lower() in {".cbr", ".cbz"}
+    )
+
+    for arc in archives:
         stem = arc.stem
         handled = False
 
@@ -63,7 +67,7 @@ def extract_covers(src: Path, out: Path, unrar: str) -> list[Path]:
         except rarfile.Error:
             pass
 
-        # fallback: ZIP ( mis-labelled CBZ CBR )
+        # fallback: ZIP (.cbz or mis-labelled .cbr)
         if not handled:
             try:
                 with zipfile.ZipFile(arc) as zf:
