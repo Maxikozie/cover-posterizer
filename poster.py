@@ -70,8 +70,8 @@ def is_image_member(name: str) -> bool:
 def cover_sort_key(name: str) -> tuple[int, int, list[int | str]]:
     basename = Path(name).name.casefold()
     is_coverish = bool(re.search(r"\b(cover|front|fc)\b", basename))
-    is_page_zero = bool(re.search(r"(^|[^0-9])0*1([^0-9]|$)", basename))
-    return (0 if is_coverish else 1, 0 if is_page_zero else 1, natural_key(name))
+    is_first_page = bool(re.search(r"(^|[^0-9])0*(?:0|1)([^0-9]|$)", basename))
+    return (0 if is_coverish else 1, 0 if is_first_page else 1, natural_key(name))
 
 
 def archive_paths(src: Path, recursive: bool) -> list[Path]:
