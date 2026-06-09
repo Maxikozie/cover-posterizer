@@ -68,6 +68,10 @@ Outputs are written to a sibling `.poster` folder:
 - `Largo Winch_poster.jpg`
 - `Largo Winch_bbcode.txt`
 
+Example poster:
+
+<a href="https://files.catbox.moe/08zqrc.jpg"><img src="https://files.catbox.moe/08zqrc.jpg" alt="Example cover poster" width="360"></a>
+
 ## Useful Options
 
 ```powershell
